@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				finance: {
+					purple: '#9b87f5',
+					'deep-purple': '#7E69AB',
+					'dark-purple': '#1A1F2C',
+					'light-purple': '#D6BCFA',
+					blue: '#D3E4FD',
+					'bright-blue': '#1EAEDB',
+					gray: '#8E9196',
+					red: '#ea384c',
+					green: '#4ade80',
+					'soft-green': '#F2FCE2',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
