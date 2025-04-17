@@ -1,6 +1,6 @@
 
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { 
   LayoutDashboard, 
   LineChart, 
@@ -22,6 +22,7 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = ({ className }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -59,33 +60,37 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
           <NavItem 
             icon={<LayoutDashboard size={20} />} 
             label="Dashboard" 
-            to="/" 
+            to="/dashboard" 
             isCollapsed={isCollapsed} 
-            active
+            active={location.pathname === "/dashboard"}
           />
           <NavItem 
             icon={<PieChart size={20} />} 
             label="Portfolio" 
             to="/portfolio" 
             isCollapsed={isCollapsed} 
+            active={location.pathname === "/portfolio"}
           />
           <NavItem 
             icon={<LineChart size={20} />} 
             label="Performance" 
             to="/performance" 
             isCollapsed={isCollapsed} 
+            active={location.pathname === "/performance"}
           />
           <NavItem 
             icon={<CircleDollarSign size={20} />} 
             label="Transactions" 
             to="/transactions" 
             isCollapsed={isCollapsed} 
+            active={location.pathname === "/transactions"}
           />
           <NavItem 
             icon={<History size={20} />} 
             label="History" 
             to="/history" 
             isCollapsed={isCollapsed} 
+            active={location.pathname === "/history"}
           />
         </nav>
       </div>
@@ -97,12 +102,14 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
             label="Notifications" 
             to="/notifications" 
             isCollapsed={isCollapsed} 
+            active={location.pathname === "/notifications"}
           />
           <NavItem 
             icon={<Settings size={20} />} 
             label="Settings" 
             to="/settings" 
             isCollapsed={isCollapsed} 
+            active={location.pathname === "/settings"}
           />
         </nav>
       </div>
